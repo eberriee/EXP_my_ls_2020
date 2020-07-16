@@ -32,6 +32,7 @@ fn main() -> ()
         print!("\n");
         if let Err(e) = my_ls::my_ls__run(path, args.long, args.recursive) {
             println!("my_ls: '{}' {}", path.display(), e);
+            std::process::exit(84);
         }    
         print!("\n");
     }
