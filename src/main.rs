@@ -14,8 +14,12 @@ struct Opt {
     #[structopt(default_value = ".", name = "PATH(S)",
         required = false, parse(from_os_str))]
     paths: Vec<std::path::PathBuf>,
-    #[structopt(short)]
+
+    /// Use a more detailled reading format
+    #[structopt(short, long)]
     long: bool,
+
+    /// Recurses through directories
     #[structopt(short, long)]
     recursive: bool
 }
